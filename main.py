@@ -156,14 +156,19 @@ def which_animal_is_heaviest():
     """
     name = ""
     weight = 0
+    marker = 1
     for animal in farm:
         if animal.weight > weight:
             name = animal.name
             weight = animal.weight
+        elif animal.weight == weight:
+            marker = 0
         else:
             pass
-    print(f"Самое тяжелое животное на ферме: {name}")
-
+    if marker:
+        print(f"Самое тяжелое животное на ферме: {name}")
+    else:
+        print("Самое тяжелое животное нельзя определить, потому что их несколько")
 
 def total_weight():
     """
@@ -209,13 +214,13 @@ def main():
 
 goose1 = Goose("Белый", 10)
 goose2 = Goose("Серый", 15)
-cow1 = Cow("Манька", 200)
-sheep1 = Sheep("Барашек", 100)
+cow1 = Cow("Манька", 120)
+sheep1 = Sheep("Барашек", 120)
 sheep2 = Sheep("Кудрявый", 100)
 hen1 = Hen("Ко-ко", 20)
 hen2 = Hen("Кукареку", 20)
 goat1 = Goat("Рога", 90)
-goat2 = Goat("Копыта", 110)
+goat2 = Goat("Копыта", 130)
 duck1 = Duck("Кряква", 30)
 
 farm = (goose1, goose2, cow1, sheep1, sheep2, hen1, hen2, goat1, goat2, duck1)
